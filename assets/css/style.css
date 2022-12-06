@@ -5,65 +5,13 @@
 	font-family: 'Roboto', sans-serif;
 	list-style: none;
 }
-
-section {
-	padding: 1rem;
-	margin-bottom: 80px;
+body {
+	background-color: #f6f6f6;
 }
-
 .content {
 	padding: 1rem;
-}
-ol.pokemon {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
-
-.pokemon li {
-	display: flex;
-	flex-direction: column;
-	margin: 0.5rem;
-	padding: 1rem 0.4rem;
-	border-radius: 0.6rem;
-	min-height: 10rem;
-	color: whitesmoke;
-}
-.pokemon li img {
-	max-width: 80px;
-}
-
-.pokemon li .number {
-	text-align: right;
-	font-size: 0.5rem;
-	color: rgba(0, 0, 0, 0.404);
-}
-
-.pokemon li .info {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	margin-top: 1rem;
-}
-.pokemon li .info .types {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-.pokemon li .info .types span {
-	border: 1px solid transparent;
-	background-color: rgba(255, 255, 255, 0.266);
-	border-radius: 1rem;
-	padding: 0.5rem;
-	text-align: center;
-	font-size: 10px;
-}
-
-.pokemon .grass {
-	background-color: rgb(73, 208, 176);
-}
-.pokemon .fire {
-	background-color: #fc6c6d;
-}
-.pokemon .water {
-	background-color: #76befe;
+	margin-bottom: 80px;
+	background-color: white;
+	height: 100vh;
+	width: 100vw;
 }
