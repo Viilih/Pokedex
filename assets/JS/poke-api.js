@@ -1,9 +1,28 @@
 const pokeApi = {};
+
+function classDetails(pokeDetail) {
+	const pokemon = new Pokemon();
+	pokemon.name = pokeDetail.name;
+	pokemon.number = pokeDetail.order;
+
+	const types = pokeDetail.types.map(typeSlot => typeSlot.type.name);
+	const [mainType] = types;
+
+	pokemon.types = types;
+	pokemon.mainType = mainType;
+
+	pokemon.photo = pokeDetail.sprites.other.dream_world.front_default;
+
+	return pokemon;
+}
+
 pokeApi.getPokemonDetail = pokemon => {
-	return fetch(pokemon.url).then(response => response.json());
+	return fetch(pokemon.url)
+		.then(response => response.json())
+		.then(classDetails);
 };
 
-pokeApi.getPokemons = (offset = 0, limit = 1) => {
+pokeApi.getPokemons = (offset = 600, limit = 100) => {
 	const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 	// Buscando a lista de pokemon através de uma requisição
 	return (
@@ -26,6 +45,4 @@ Promise.all([
 	fetch('https://pokeapi.co/api/v2/pokemon/2'),
 	fetch('https://pokeapi.co/api/v2/pokemon/3'),
 	fetch('https://pokeapi.co/api/v2/pokemon/4'),
-]).then(results => {
-	console.log(results);
-});
+]);

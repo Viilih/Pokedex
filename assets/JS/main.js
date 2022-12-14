@@ -1,25 +1,23 @@
 const list = document.querySelector('#pokemonListJS');
-function pokemonType(pokemonTypes) {
-	return pokemonTypes.map(
-		slotType => `<span class ="type">${slotType.type.name}</span>`
-	);
-}
+
 function pokemonListHtml(pokemon) {
 	return `
-	<li>
-		<span class="number">#${pokemon.order}</span>
+	<li class = "${pokemon.mainType}">
+		<span class="number">#${pokemon.number}</span>
 		<div class= "titleArea"> 
 			<span class="title">${pokemon.name}</span>
 		</div>
 		
 				<div class="info">
 					<div class="types">
-						${pokemonType(pokemon.types).join('')}
+						${pokemon.types.map(type => `<span class ="type">${type}</span>`).join('')}
 					</div>
-						<img
-							src="${pokemon.sprites.other.dream_world.front_default}"
-							alt="${pokemon.name}"
-						/>
+						<div class = "image">
+							<img
+								src="${pokemon.photo}"
+								alt="${pokemon.name}"
+							/>
+						</div>
 				</div>
 	</li>`;
 }
