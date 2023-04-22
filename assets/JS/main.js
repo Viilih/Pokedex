@@ -6,6 +6,7 @@ function pokemonListHtml(pokemon) {
 		<span class="number">#${pokemon.number}</span>
 		<div class= "titleArea"> 
 			<span class="title">${pokemon.name}</span>
+			<span class="subtitle">Teste qualquer</span>
 		</div>
 		
 				<div class="info">
